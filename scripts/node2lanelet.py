@@ -25,7 +25,12 @@ def smooth_3d_curve(points, poly_order, window_size):
         smoothed = np.array([savgol_filter(smoothed[:, i], window_size, poly_order) for i in range(3)]).T
     return smoothed
 
-def fem_smooth_slide_window(traj_array, window_size):
+
+# params:
+# w1: the smooth cost weight, w2: the length cost weight, w3: the drift cost weight
+# window_size: the slide window length
+# interval: the interval from this window to next window
+def fem_smooth_slide_window(traj_array, window_size, interval, w1, w2, w3):
 
     return 0
 
